@@ -19,7 +19,7 @@
 3. atualizar os pacotes:
 -> # apt update
 -> # apt install -t bullseye-backports xorg xwayland
--> # apt install sway sudo waybar wofi foot kitty terminator swaybg swayidle wl-clipboard grim slurp wf-recorder light yad wlogout mpv mpd mpc viewnior imagemagick gir1.2-polkit-1.0 lightdm lightdm-gtk-greeter-settings fonts-font-awesome fonts-cantarell fzf
+-> # apt install sway sudo waybar wofi foot kitty terminator swaybg swayidle wl-clipboard grim slurp wf-recorder light yad wlogout mpv mpd mpc viewnior imagemagick gir1.2-polkit-1.0 lightdm lightdm-gtk-greeter-settings fonts-font-awesome fonts-cantarell fzf gcc build-essential papirus-icon-theme arc-theme libreoffice libreoffice-style-papirus libreoffice-l10n-pt-br libreoffice-gtk3
 
 
 
@@ -80,11 +80,9 @@ obs: na tela de login escolher Sway Window Manager
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
 }
-bindsym $mod+Shift+x mode "$mode_system"
+-> bindsym $mod+Shift+x mode "$mode_system"
 
-
---> ~/.config/sway/config
-set $menu exec wofi --show drun
+-> set $menu exec wofi --show drun
 
 
 
@@ -102,20 +100,23 @@ set $menu exec wofi --show drun
 
 # programas essenciais
 ## compactadores e descompactadores
--> sudo apt install p7zip-full p7zip-rar lzma lzma-dev rar unrar-free p7zip ncompress file-roller
+-> sudo apt install p7zip-full p7zip-rar lzma lzma-dev rar unzip unrar-free p7zip ncompress file-roller
 
 ## explorador de arquivos e outros programas
 -> sudo apt install nautilus gedit gedit-plugins eog eog-plugins firefox-esr firefox-esr-l10n-pt-br
 
- 
- 
+## instalação do Nodejs e npm
+--> https://nodejs.org/en/download/
+
+## instalação do tree-sitter-cli
+-> sudo npm install -g tree-sitter-cli
  
  # instalação da fonts Adobe
  -> git clone https://github.com/adobe-fonts/source-code-pro
  -> fc-cache -vf
 
 
-sudo apt install nautilus gnome-calendar dconf-editor chromium gedit --no-install-recommends
+
 
 
 
