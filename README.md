@@ -101,7 +101,11 @@ set $menu exec wofi --show drun
 
 
 # programas essenciais
--> sudo apt install nautilus gedit file-roller eog 
+## compactadores e descompactadores
+-> sudo apt install p7zip-full p7zip-rar lzma lzma-dev rar unrar-free p7zip ncompress file-roller
+
+## explorador de arquivos e outros programas
+-> sudo apt install nautilus gedit gedit-plugins eog eog-plugins firefox-esr firefox-esr-l10n-pt-br
 
  
  
@@ -113,8 +117,7 @@ set $menu exec wofi --show drun
 
 sudo apt install nautilus gnome-calendar dconf-editor chromium gedit --no-install-recommends
 
---> compactadores e descompactadores
-sudo apt-get install p7zip-full p7zip-rar lzma lzma-dev rar unrar-free p7zip ncompress file-roller
+
 
 --> icons
 sudo apt install papirus-icon-theme arc-theme libreoffice libreoffice-style-papirus eog
