@@ -18,14 +18,67 @@
 
 3. atualizar os pacotes:
 -> # apt update
+-> # apt install -t bullseye-backports xorg xwayland
+-> # apt install sway sudo waybar wofi foot kitty terminator swaybg swayidle wl-clipboard grim slurp wf-recorder light yad wlogout mpv mpd mpc viewnior imagemagick gir1.2-polkit-1.0 lightdm fonts-font-awesome fonts-cantarell
 
--> # apt install sway xwayland xorg sudo waybar wofi kitty terminator swaybg swayidle wl-clipboard grim slurp wf-recorder light yad wlogout mpv mpd mpc viewnior imagemagick gir1.2-polkit-1.0
+
 
 ## configuracao
+1. adicionar usuário ao sudo
+-> # nano /etc/sudoers
+  	user ALL=(ALL:ALL) ALL
 
-1. copiar o arquivo de configuração para HOME
--> $ mkdir .config/sway
--> $ cp /etc/sway/config ~/
+1. ativar o gerenciador de login lightdm
+-> sudo systemctl enable lightdm.service
+1.1 dar permissão para alterar o lightdm
+-> $ sudo chmod 777 /etc/lightdm/lightdm-gtk-greeter.cong
+
+1.2 criar as pastas do usuãrios automaticamente
+-> $ xdg-user-dirs-update
+
+1.3 renicia sistema
+-> $ systemctl reboot
+
+obs: na tela de login escolher Sway Window Manager
+
+4. Conectar e baixar os arquivos necessários do Github
+-> # apt install -t bullseye-backports git
+-> $ git clone https://github.com/hiromitimiyashita/Debian-Sway
+-> # 
+
+# configurar o sway 
+1. copiar o arquivo de configuração
+-> $ mkdir ~/.config/sway
+-> $ cp /etc/sway/config ~/.config/sway/
+
+2. edição básica do sway, ~/.config/sway/config:
+-> set $term terminator
+-> set $menu exec wofi --show drunalex
+-> # configurar o teclado para japonês e abnt2
+-> input * {
+	xkb_layout "jp, br"
+	xkb_model "jp106"
+	xkb_options "grp:alt_space_toggle"
+}
+-> exec nm-applet --indicator
+-> bar {
+	swaybar_command waybar
+}
+
+
+# configuraçao do waybar
+1. copiar o arquivo de configuração
+-> $ mkdir ~/.config/waybar
+-> cp /etc/xdg/waybar/* ~/.config/waybar/
+
+
+
+
+
+
+
+
+
  
 
 --> ~/.config/sway/config
