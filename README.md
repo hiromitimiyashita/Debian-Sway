@@ -19,7 +19,7 @@
 3. atualizar os pacotes:
 -> # apt update
 -> # apt install -t bullseye-backports xorg xwayland
--> # apt install sway sudo waybar wofi foot kitty terminator swaybg swayidle wl-clipboard grim slurp wf-recorder light yad wlogout mpv mpd mpc viewnior imagemagick gir1.2-polkit-1.0 lightdm lightdm-gtk-greeter-settings fonts-font-awesome fonts-cantarell
+-> # apt install sway sudo waybar wofi foot kitty terminator swaybg swayidle wl-clipboard grim slurp wf-recorder light yad wlogout mpv mpd mpc viewnior imagemagick gir1.2-polkit-1.0 lightdm lightdm-gtk-greeter-settings fonts-font-awesome fonts-cantarell fzf
 
 
 
@@ -101,7 +101,7 @@ set $menu exec wofi --show drun
 
 
 # programas essenciais
--> sudo apt install nautilus gedit file-roller eog
+-> sudo apt install nautilus gedit file-roller eog 
 
  
  
@@ -114,7 +114,7 @@ set $menu exec wofi --show drun
 sudo apt install nautilus gnome-calendar dconf-editor chromium gedit --no-install-recommends
 
 --> compactadores e descompactadores
-sudo apt-get install p7zip-full p7zip-rar lzma lzma-dev rar unrar-free p7zip ark ncompress file-roller
+sudo apt-get install p7zip-full p7zip-rar lzma lzma-dev rar unrar-free p7zip ncompress file-roller
 
 --> icons
 sudo apt install papirus-icon-theme arc-theme libreoffice libreoffice-style-papirus eog
