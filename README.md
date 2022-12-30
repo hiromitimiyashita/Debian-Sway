@@ -19,7 +19,7 @@
 3. atualizar os pacotes:
 -> # apt update
 -> # apt install -t bullseye-backports xorg xwayland
--> # apt install sway sudo waybar wofi foot kitty terminator swaybg swayidle wl-clipboard grim slurp wf-recorder light yad wlogout mpv mpd mpc viewnior imagemagick gir1.2-polkit-1.0 lightdm fonts-font-awesome fonts-cantarell
+-> # apt install sway sudo waybar wofi foot kitty terminator swaybg swayidle wl-clipboard grim slurp wf-recorder light yad wlogout mpv mpd mpc viewnior imagemagick gir1.2-polkit-1.0 lightdm lightdm-gtk-greeter-settings fonts-font-awesome fonts-cantarell
 
 
 
@@ -64,6 +64,29 @@ obs: na tela de login escolher Sway Window Manager
 -> bar {
 	swaybar_command waybar
 }
+-> font pango: Cantarell 11
+-> #gaps outer 1
+-> #gaps inner 5
+-> default_border pixel 5
+
+-> set $mode_system System (e)xit, (s)leep, (r)eboot, (p)oweroff
+-> mode "$mode_system" {
+	bindsym e exec swaymsg exit, mode "default"
+	bindsym r exec systemctl reboot, mode "default"
+	bindsym p exec systemctl poweroff, mode "default"
+	bindsym s exec systemctl syspend, mode "default"
+	
+	# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+bindsym $mod+Shift+x mode "$mode_system"
+
+
+--> ~/.config/sway/config
+set $menu exec wofi --show drun
+
+
 
 
 # configuraçao do waybar
@@ -77,12 +100,16 @@ obs: na tela de login escolher Sway Window Manager
 
 
 
-
+# programas essenciais
+-> sudo apt install nautilus gedit file-roller eog
 
  
+ 
+ 
+ # instalação da fonts Adobe
+ -> git clone https://github.com/adobe-fonts/source-code-pro
+ -> fc-cache -vf
 
---> ~/.config/sway/config
-set $menu exec wofi --show drun
 
 sudo apt install nautilus gnome-calendar dconf-editor chromium gedit --no-install-recommends
 
