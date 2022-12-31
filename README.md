@@ -48,7 +48,8 @@
 -> export SDL_IM_MODULE=ibus
 -> export XDG_CURRENT_DESKTOP=KDE ibus-daemon -drx
 
-
+--> $ ln -s $HOME/.profile $HOME/.bash_profile
+--> $ ln -s $HOME/.profile $HOME/.zprofile
 
 
 1.3 renicia sistema
