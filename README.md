@@ -50,7 +50,8 @@
 
 --> $ ln -s $HOME/.profile $HOME/.bash_profile
 --> $ ln -s $HOME/.profile $HOME/.zprofile
-
+--> $ touch .Xresources
+--> $ ln -s $HOME/.Xresources $HOME/.Xdefaults
 
 1.3 renicia sistema
 -> $ systemctl reboot
