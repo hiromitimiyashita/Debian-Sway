@@ -18,7 +18,7 @@
 
 3. atualizar os pacotes:
 -> # apt update
--> # apt install -t bullseye-backports xorg xwayland
+-> # apt install -t bullseye-backports xorg xwayland qt6-wayland qt5ct
 -> # apt install sway sudo waybar wofi foot kitty terminator swaybg swayidle wl-clipboard grim slurp wf-recorder light yad wlogout mpv mpd mpc viewnior imagemagick gir1.2-polkit-1.0 lightdm lightdm-gtk-greeter-settings fonts-font-awesome fonts-cantarell fzf gcc build-essential papirus-icon-theme arc-theme libreoffice libreoffice-style-papirus libreoffice-l10n-pt-br libreoffice-gtk3 network-manager alsa-utils pulseaudio pavucontrol
 
 
@@ -42,11 +42,22 @@
 -> export XDG_SESSION_TYPE=wayland
 -> export GDK_BACKEND=wayland
 -> export QT_QPA_PLATFORM=wayland
+-> export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+-> export QT_QPA_PLATFORMTHEME=qt5ct
+-> export CLUTTER_BACKEND=wayland
+-> export SDL_VIDEODRIVER=wayland
+
 -> export GTK_IM_MODULE=ibus
 -> export XMODIFIERS=@im=ibus
 -> export QT_IM_MODULE=ibus
 -> export SDL_IM_MODULE=ibus
 -> export XDG_CURRENT_DESKTOP=KDE ibus-daemon -drx
+
+# resolvendo o problema com java
+if [ "$XDG_SESSION_DESKTOP" = "sway" ] ; then
+    # https://github.com/swaywm/sway/issues/595
+    export _JAVA_AWT_WM_NONREPARENTING=1
+fi
 
 --> $ ln -s $HOME/.profile $HOME/.bash_profile
 --> $ ln -s $HOME/.profile $HOME/.zprofile
