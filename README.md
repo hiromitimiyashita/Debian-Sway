@@ -95,11 +95,16 @@ Edição básica do sway, ~/.config/sway/config:
 	exec nm-applet --indicator
 	bar {
 		swaybar_command waybar
+		workspace_buttons yes
 	}
 	font pango: Cantarell 11
-	#gaps outer 1
-	#gaps inner 5
-	default_border pixel 5
+	
+	default_border none
+	gaps outer 1
+	gaps inner 1
+	smart_gaps on
+	
+	exec dbus-update-activation-environment --systemd WAYLAND_DESPLAY XDG_CURRENT_DESKTOP=sway
 
 	set $mode_system System (e)xit, (s)leep, (r)eboot, (p)oweroff
 	mode "$mode_system" {
