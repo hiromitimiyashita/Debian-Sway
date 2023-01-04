@@ -19,7 +19,7 @@ Adicionar no arquivo /etc/apt/source.list:
 Atualizar os pacotes:
 
 	# apt update
-	# apt install -t bullseye-backports xorg xwayland qt6-wayland qt5ct
+	# apt install xorg xwayland qt6-wayland qt5ct
 	# apt install sway sudo waybar wofi foot kitty terminator swaybg swayidle wl-clipboard grim slurp wf-recorder light yad wlogout mpv mpd mpc viewnior imagemagick gir1.2-polkit-1.0 lightdm lightdm-gtk-greeter-settings fonts-font-awesome fonts-cantarell fzf gcc build-essential papirus-icon-theme arc-theme libreoffice libreoffice-style-papirus libreoffice-l10n-pt-br libreoffice-gtk3 alsa-utils pulseaudio pavucontrol policykit-1-gnome
 
 ## Configuracao
@@ -34,7 +34,7 @@ Ativar o gerenciador de login lightdm
 
 Dar permissão para alterar o lightdm
 
-	$ sudo chmod 777 /etc/lightdm/lightdm-gtk-greeter.cong
+	
 
 Criar as pastas do usuãrios automaticamente
 
